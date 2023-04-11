@@ -3,12 +3,12 @@ import { TwitterFollowCard } from "./TwitterFollowCard";
 export function App() {
   return (
     <div className="App">
-      <TwitterFollowCard isFollowing username="userName" name="Name" />
-      <TwitterFollowCard
-        isFollowing={false}
-        username="userName1"
-        name="Name1"
-      />
+      <TwitterFollowCard isFollowing userName="userName">
+        name
+      </TwitterFollowCard>
+      <TwitterFollowCard isFollowing={false} userName="userName1">
+        name1
+      </TwitterFollowCard>
     </div>
   );
 }
