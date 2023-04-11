@@ -3,6 +3,10 @@ export const TwitterFollowCard = ({
   userName = "unknown",
   isFollowing = false,
 }) => {
+  const buttonText = isFollowing ? "Following" : "Unfollow";
+  const buttonClassName = isFollowing
+    ? "tw-followCard-button is-following"
+    : "tw-followCard-button";
   return (
     <article className="tw-followCard">
       <header className="tw-followCard-header">
@@ -17,7 +21,7 @@ export const TwitterFollowCard = ({
         </div>
       </header>
       <aside>
-        <button className="tw-followCard-button">Follow</button>
+        <button className={buttonClassName}>{buttonText}</button>
       </aside>
     </article>
   );
