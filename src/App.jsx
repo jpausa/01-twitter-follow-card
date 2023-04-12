@@ -1,14 +1,24 @@
 import "./App.css";
 import { TwitterFollowCard } from "./TwitterFollowCard";
+
+const users = [
+  { userName: "john", name: "John", isFollowing: true },
+  { userName: "albertt", name: "albert", isFollowing: true },
+  { userName: "johnd", name: "John Doe", isFollowing: false },
+];
 export function App() {
   return (
-    <div className="App">
-      <TwitterFollowCard isFollowing userName="userName">
-        name
-      </TwitterFollowCard>
-      <TwitterFollowCard isFollowing={false} userName="userName1">
-        name1
-      </TwitterFollowCard>
-    </div>
+    <section className="App">
+      {
+        users.map((user) => {
+          const { userName, name, isFollowing} = user;
+          return (
+          <TwitterFollowCard initialIsFollowing={isFollowing} userName={userName}>
+          {name}
+        </TwitterFollowCard>
+        )
+        })
+      }
+    </section>
   );
 }
