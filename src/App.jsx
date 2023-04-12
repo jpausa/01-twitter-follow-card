@@ -10,10 +10,9 @@ export function App() {
   return (
     <section className="App">
       {
-        users.map((user) => {
-          const { userName, name, isFollowing} = user;
+        users.map(({ userName, name, isFollowing}) => {
           return (
-          <TwitterFollowCard initialIsFollowing={isFollowing} userName={userName}>
+          <TwitterFollowCard key={userName} initialIsFollowing={isFollowing} userName={userName}>
           {name}
         </TwitterFollowCard>
         )
